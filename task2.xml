@@ -1,0 +1,23 @@
+<students>
+    <student sr="1">
+        <slno> 23 </slno>
+        <name> John Carter </name>
+        <date> 25</date>
+        <month> 12 </month>
+        <year> 2015 </year>
+    </student>
+    <student sr="2">
+        <slno> 29 </slno>
+        <name> Bob Marshal </name>
+        <date> 13</date>
+        <month> 01 </month>
+        <year> 1999 </year>
+    </student>
+    <student sr="3">
+        <slno> 35 </slno>
+        <name> Clark Kent </name>
+      <date> 17</date>
+        <month> 06 </month>
+        <year> 2005 </year>
+    </student>
+</students>

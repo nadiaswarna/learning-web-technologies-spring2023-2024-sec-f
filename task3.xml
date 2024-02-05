@@ -1,0 +1,24 @@
+<students>
+    <student sr="1">
+        <id> 1 </id>
+        <name> John Doe </name>
+        <address> flat bashundhara</address>
+        <department> Sales</department>
+        <salary> 20000 </salary>
+    </student>
+    <student sr="2">
+        <id> 2 </id>
+        <name> Mark Zukerberg </name>
+        <address> flat2</address>
+        <department> Accounts</department>
+        <salary> 12000 </salary>
+    </student>
+    <student sr="3">
+        <id> 3 </id>
+        <name> Ala Voski </name>
+        <address> C Block</address>
+        <department> Human Resource</department>
+        <salary> 30000 </salary>
+    </student>
+
+</students>
