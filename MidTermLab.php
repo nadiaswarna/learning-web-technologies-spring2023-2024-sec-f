@@ -1,60 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration Form</title>
-    <style>
-        /* Add your CSS styles here */
-    </style>
+    <title>Signup Page</title>
 </head>
 <body>
-    <form action="#" method="post">
-        <div>
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
-        </div>
-        <div>
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
-        </div>
-        <div>
-            <label for="dob">Date of Birth:</label>
-            <select id="dob" name="dob" required>
-                <option value="">-- Select DOB --</option>
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <!-- Add more options for other months -->
-            </select>
-        </div>
-        <div>
-            <label>Gender:</label>
-            <input type="radio" id="male" name="gender" value="male" required>
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-        </div>
-        <div>
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="text" id="phoneNumber" name="phoneNumber" required>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div>
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
-        </div>
-        <div>
-            <input type="submit" value="Submit">
-        </div>
-    </form>
+        <form class="" action="validate.php" method="post" autocomplete="off">
+        
+        <table border="0" align="center">
+            <h3 align="center">Create Your Accout Here</h3>
+                
+            <tr>
+            <td>
+                <p>First Name</p>
+                    <input type="text" name="fname" id="fname" required values=""/>
+                    <br>
+                <p>Last Name: </p>
+                    <input type="text" name="lname" id="lname" required value=""></td>
+            </tr>
+            <tr>
+                <td>
+                <br><label for="dob">Date of Birth:</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <select name="day" id="day">
+                        <option value="">Day</option>
+                        <?php
+                            for ($i = 1; $i <= 31; $i++) {
+                            echo "<option value='$i'>$i</option>";
+                            }
+                        ?>
+                    </select>
+                    <select name="month" id="month">
+                        <option value="">Month</option>
+                        <?php
+                            $months = array(
+                            "January", "February", "March", "April", "May", "June", "July",
+                            "August", "September", "October", "November", "December");
+
+                            foreach ($months as $index => $month) {
+                                $value = $index + 1;
+                                echo "<option value='$value'>$month</option>";
+                            }
+                        ?>
+
+                    </select>
+                    <select name="year" id="year">
+                        <option value="">Year</option>
+                        <?php
+                            $currentYear = date("Y");
+                            $startYear = $currentYear - 10; 
+                            for ($i = $currentYear; $i >= $startYear; $i--) {
+                            echo "<option value='$i'>$i</option>";
+                            }
+                        ?>
+                    </select>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label>Gender:</label>
+                    <input type="checkbox" id="male" name="gender[]" value="Male">
+                    <label for="male">Male</label>
+                    <input type="checkbox" id="female" name="gender[]" value="Female">
+                    <label for="female">Female</label>
+                    <input type="checkbox" id="other" name="gender[]" value="Other">
+                    <label for="other">Other</label><br><br> 
+                </td>
+            </tr>   
+            <tr>
+            <td>
+            <p>Phone Number</p>
+            <input type="number" name="pnumber" id="pnumber"><br>
+            <p>Email:</p>
+            <input type="text" name="email" id="email" required value="">
+            <p>Password: </p>    
+            <input type="password" name="password" id="password" required value="">
+            <p>Confirm Password: </p>
+            <input type="password" name="confirmpassword" id="connfirmpassword" required value=""> </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="checkbox" name="check[]" value="" required/> I have read the <a href="term.php" >Terms & Conditions </a><br><br></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button type="submit" name="submit">Sign Up</button><br><br> </td>
+            </tr>
+            <tr>
+                <td colspan="2">Already have an Accout? Click here to <a href="login.php" >Sign in </a><br><br></td>
+            </tr>
+    </table>
+        </form>
 </body>
 </html>
 
