@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Signup Page</title>
+    <title>Signup</title>
 </head>
 <body>
         <form class="" action="validate.php" method="post" autocomplete="off">
@@ -190,3 +190,42 @@ function createUser($user)
 }
 
 
+
+ 
+function validateName($name) {
+    // Rule i: Cannot be empty
+    if (empty($name)) {
+        return false;
+    }
+ 
+    // Rule ii: Contains at least two words
+    $words = explode(' ', $name);
+    if (count($words) < 2) {
+        return false;
+    }
+ 
+    // Rule iii: Can contain a-z or A-Z or dot(.) or dash(-)
+    $allowedChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-';
+    foreach (str_split($name) as $char) {
+        if (strpos($allowedChars, $char) === false) {
+            return false;
+        }
+    }
+ 
+    // Rule iv: Must start with a letter
+    $firstChar = $name[0];
+    if (!ctype_alpha($firstChar)) {
+        return false;
+    }
+ 
+    // All rules passed
+    return true;
+}
+ 
+// Test the function
+$name = "John Doe"; // Example name
+if (validateName($name)) {
+    echo "Name is valid.";
+} else {
+    echo "Name is not valid.";
+}
